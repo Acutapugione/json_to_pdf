@@ -1,0 +1,35 @@
+<body>
+    <table>
+        <caption>
+            Generated invoice for {{ items|length }} items
+        </caption>
+        <thead>
+            <tr>
+                <th scope="col">total_calculation_time</th>
+                <th scope="col">total_requests</th>
+                <th scope="col">distance</th>
+                <th scope="col">duration</th>
+                <th scope="col">start_address</th>
+                <th scope="col">end_address</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+            <tr>
+                <th scope="row">{{item.total_calculation_time}}</th>
+                <td>{{item.total_requests}}</td>
+                <td>{{item.distance}}</td>
+                <td>{{item.duration}}</td>
+                <td>{{item.start_address}}</td>
+                <td>{{item.end_address}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <th scope="row" colspan="2">Total</th>
+                <td>{{ items|length }}</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
